@@ -13,7 +13,7 @@ def build_link_map(wiki_page, link_depth=2):
         count = 1
         total = len(current_list)
         for link in current_list:
-            print '\t[+] Processing Link {0} of {1} - {2}%'.format(count, total, (float(count)/total)*100)
+            print '\t[+] Processing Link {0} of {1} - {2:.2f}%'.format(count, total, (float(count)/total)*100)
             sub_list += get_links_from_page(link)
             count += 1
 
@@ -26,7 +26,7 @@ def build_link_map(wiki_page, link_depth=2):
     for link in total_list:
         print link
 
-    print len(total_list)
+    print '{0} Click Accessible Links: {1}'.format(link_depth, len(total_list))
 
 
 def get_links_from_page(wiki_page):
